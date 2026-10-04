@@ -38,3 +38,14 @@ jobs:
           local_path: ./preview.html
           remote_path: /
           sftp_only: true
+
+      - name: Upload preview assets over SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
+          local_path: ./assets/*
+          remote_path: /assets/
+          sftp_only: true
