@@ -103,6 +103,10 @@
     .checks input{width:auto;margin:4px 0 0}
     form .button{margin-top:24px}
     .preview-note{margin:14px 0 0;color:var(--muted);font-size:.78rem;font-weight:400}
+    .preview-note.success{color:#176a4b;font-weight:700}
+    .preview-note.error{color:#9f2927;font-weight:700}
+    .button:disabled{cursor:wait;opacity:.72;transform:none}
+    .hp-field{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
     footer{padding:35px 0;background:#0d3029;color:rgba(255,255,255,.65);font-size:.87rem}
     .foot{display:flex;justify-content:space-between;gap:30px}
     footer a{color:white;text-underline-offset:4px}
@@ -133,9 +137,74 @@
 
     <section class="audience"><div class="wrap"><p class="eyebrow dark-eye">LITLIR OG STÓRIR HÓPAR</p><h2>Jólaball sem hentar ykkur</h2><p>Sama hvort gestirnir eru nokkrir tugir eða nokkur hundruð. Við miðum tillöguna við hópinn og aðstæður.</p><div class="audience-list"><span>Leikskólar</span><span>Grunnskólar</span><span>Kirkjur</span><span>Félagasamtök</span><span>Starfsmannafélög</span><span>Fyrirtæki</span></div></div></section>
 
-    <section class="inquiry" id="fyrirspurn"><div class="wrap inquiry-shell"><div class="inquiry-copy"><p class="eyebrow">FÁ TILLÖGU OG TILBOÐ</p><h2>Segið okkur frá jólaballinu.</h2><p>Gefið okkur fyrstu upplýsingarnar. Við förum yfir þarfirnar, mótum tillögu og höfum samband.</p><p class="small"><strong>Fyrirspurn er ekki bókun.</strong><br>Endanleg útfærsla og verð eru staðfest sérstaklega.</p></div><form id="preview-form" aria-describedby="form-note"><div class="form-grid"><label>Nafn tengiliðar *<input name="name" autocomplete="name" required></label><label>Fyrirtæki, félag eða stofnun<input name="group" autocomplete="organization"></label><label>Netfang *<input name="email" type="email" autocomplete="email" required></label><label>Símanúmer<input name="phone" type="tel" inputmode="tel" autocomplete="tel"></label><label>Dagsetning<input name="date" type="date"></label><label>Tímasetning<input name="time" type="time"></label><label>Staðsetning<input name="location" autocomplete="street-address"></label><label>Áætlaður gestafjöldi<input name="guests" type="number" min="1" inputmode="numeric"></label><fieldset class="full"><legend>Hvernig getum við hjálpað?</legend><div class="checks"><label><input name="services" value="jolasveinar" type="checkbox"> Jólasveinar og skemmtun</label><label><input name="services" value="tonlist-hljodkerfi" type="checkbox"> Lifandi tónlist og hljóðkerfi</label><label><input name="services" value="heildarlausn" type="checkbox"> Heildarlausn frá A til Ö</label><label><input name="services" value="salur-veitingar" type="checkbox"> Salur og/eða veitingar</label><label><input name="services" value="saelgaeti" type="checkbox"> Sælgæti</label><label><input name="services" value="tillaga" type="checkbox"> Óska eftir tillögu</label></div></fieldset><label class="full">Segið okkur aðeins frá jólaballinu<textarea name="message" placeholder="Hvernig hópur er þetta og hvað hafið þið í huga?"></textarea></label></div><button class="button" type="submit">Óska eftir tillögu og tilboði ↗</button><p class="preview-note" id="form-note" aria-live="polite">Þetta er prufuútgáfa. Formið sendir ekki gögn enn.</p></form></div></section>
+    <section class="inquiry" id="fyrirspurn"><div class="wrap inquiry-shell"><div class="inquiry-copy"><p class="eyebrow">FÁ TILLÖGU OG TILBOÐ</p><h2>Segið okkur frá jólaballinu.</h2><p>Gefið okkur fyrstu upplýsingarnar. Við förum yfir þarfirnar, mótum tillögu og höfum samband.</p><p class="small"><strong>Fyrirspurn er ekki bókun.</strong><br>Endanleg útfærsla og verð eru staðfest sérstaklega.</p></div><form id="preview-form" method="post" aria-describedby="form-note"><input type="hidden" name="origin"><input type="hidden" name="requestId"><input type="hidden" name="service"><label class="hp-field" aria-hidden="true">Skildu þennan reit eftir auðan<input name="website" tabindex="-1" autocomplete="off"></label><div class="form-grid"><label>Nafn tengiliðar *<input name="name" autocomplete="name" maxlength="120" required></label><label>Fyrirtæki, félag eða stofnun<input name="group" autocomplete="organization" maxlength="200"></label><label>Netfang *<input name="email" type="email" autocomplete="email" maxlength="254" required></label><label>Símanúmer<input name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="40"></label><label>Dagsetning<input name="date" type="date"></label><label>Tímasetning<input name="time" type="time"></label><label>Staðsetning<input name="location" autocomplete="street-address" maxlength="200"></label><label>Áætlaður gestafjöldi<input name="guests" type="number" min="1" max="1000" inputmode="numeric"></label><fieldset class="full"><legend>Hvernig getum við hjálpað? *</legend><div class="checks"><label><input name="services" value="Jólasveinar og skemmtun" type="checkbox"> Jólasveinar og skemmtun</label><label><input name="services" value="Lifandi tónlist og hljóðkerfi" type="checkbox"> Lifandi tónlist og hljóðkerfi</label><label><input name="services" value="Heildarlausn frá A til Ö" type="checkbox"> Heildarlausn frá A til Ö</label><label><input name="services" value="Salur og/eða veitingar" type="checkbox"> Salur og/eða veitingar</label><label><input name="services" value="Sælgæti" type="checkbox"> Sælgæti</label><label><input name="services" value="Óska eftir tillögu" type="checkbox"> Óska eftir tillögu</label></div></fieldset><label class="full">Segið okkur aðeins frá jólaballinu *<textarea name="message" maxlength="3000" required placeholder="Hvernig hópur er þetta og hvað hafið þið í huga?"></textarea></label></div><button class="button" type="submit">Óska eftir tillögu og tilboði ↗</button><p class="preview-note" id="form-note" aria-live="polite">Fyrirspurnin verður send til Skyrgáms. Þú færð móttökustaðfestingu í tölvupósti.</p></form></div></section>
   </main>
   <footer><div class="wrap foot"><span>© 2026 Jólaball.is · Þjónusta frá Jólasveinaþjónustu Skyrgáms</span><span><a href="https://skyrgamur.is/">skyrgamur.is ↗</a> · skyrgamur@skyrgamur.is</span></div></footer>
-  <script>document.getElementById('preview-form').addEventListener('submit',function(e){e.preventDefault();alert('Þetta er prufuútgáfa — formið sendir ekki gögn enn.');});</script>
+  <script>
+    (() => {
+      const endpoint = 'https://script.google.com/macros/s/AKfycbxwoIaQN9VqMdR7cnSNo2E48MyYTfPmGYlxEgQmBbxY_yGv3U-hYp6sMCy_etTkk0o2fw/exec';
+      const form = document.getElementById('preview-form');
+      const status = document.getElementById('form-note');
+      const button = form.querySelector('button[type="submit"]');
+      const frame = document.createElement('iframe');
+      frame.name = 'jolaball-inquiry-response';
+      frame.title = 'Svar við fyrirspurn';
+      frame.hidden = true;
+      document.body.append(frame);
+      form.action = endpoint;
+      form.target = frame.name;
+      form.elements.origin.value = window.location.origin;
+      let activeId;
+      let timeout;
+      const setBusy = busy => {
+        button.disabled = busy;
+        button.textContent = busy ? 'Sendum fyrirspurn…' : 'Óska eftir tillögu og tilboði ↗';
+      };
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        status.className = 'preview-note';
+        const selected = [...form.querySelectorAll('[name="services"]:checked')].map(input => input.value);
+        if (!selected.length) {
+          status.textContent = 'Veldu að minnsta kosti einn þjónustuþátt.';
+          status.classList.add('error');
+          form.querySelector('[name="services"]').focus();
+          return;
+        }
+        if (!form.reportValidity() || form.elements.website.value) return;
+        activeId = crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + '-' + Math.random().toString(36).slice(2);
+        form.elements.requestId.value = activeId;
+        form.elements.service.value = 'Jólaball.is: ' + selected.join(' | ');
+        status.textContent = 'Sendum fyrirspurnina…';
+        setBusy(true);
+        HTMLFormElement.prototype.submit.call(form);
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          setBusy(false);
+          status.textContent = 'Ekki tókst að staðfesta móttöku. Athugaðu hvort staðfestingarpóstur hafi borist áður en þú reynir aftur.';
+          status.classList.add('error');
+        }, 45000);
+      });
+      window.addEventListener('message', event => {
+        const trustedOrigin = event.origin === 'https://script.google.com' || event.origin === 'https://script.googleusercontent.com' || /^https:\/\/[a-z0-9-]+-script\.googleusercontent\.com$/.test(event.origin);
+        if (!activeId || !trustedOrigin || event.data?.type !== 'skyrgamur-inquiry' || event.data.requestId !== activeId) return;
+        activeId = undefined;
+        clearTimeout(timeout);
+        setBusy(false);
+        status.className = 'preview-note';
+        if (event.data.status === 'sent') {
+          status.textContent = 'Við höfum móttekið fyrirspurnina og sent þér staðfestingu í tölvupósti. Við höfum samband eins fljótt og auðið er.';
+          status.classList.add('success');
+          form.reset();
+          form.elements.origin.value = window.location.origin;
+        } else if (event.data.status === 'receipt-error') {
+          status.textContent = 'Fyrirspurnin barst okkur en ekki tókst að senda móttökupóst. Hafðu samband við skyrgamur@skyrgamur.is ef staðfesting berst ekki.';
+          status.classList.add('error');
+        } else {
+          status.textContent = 'Ekki tókst að senda fyrirspurnina. Reyndu aftur síðar eða skrifaðu á skyrgamur@skyrgamur.is.';
+          status.classList.add('error');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
