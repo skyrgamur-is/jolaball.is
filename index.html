@@ -2,284 +2,209 @@
 <html lang="is">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jólaball fyrir fyrirtæki | Jólaball.is</title>
-  <meta name="description" content="Jólaball fyrir fyrirtæki og félög — jólasveinar, tónlist, dagskrá, sælgæti og skipulag. Heildarlausnir frá Jólasveinaþjónustu Skyrgáms.">
-  <link rel="canonical" href="https://jolaball.is/">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Jólaball fyrir fyrirtæki, skóla og félög | Jólaball.is</title>
+  <meta name="description" content="Sérsniðin jólaböll með jólasveinum, lifandi tónlist og heildarumsjón. Traust þjónusta frá Jólasveinaþjónustu Skyrgáms síðan 1998.">
+  <meta name="robots" content="index,follow,max-image-preview:large">\n  <link rel="canonical" href="https://jolaball.is/">\n  <meta property="og:type" content="website">\n  <meta property="og:url" content="https://jolaball.is/">\n  <meta property="og:title" content="Jólaball fyrir fyrirtæki, skóla og félög | Jólaball.is">\n  <meta property="og:description" content="Sérsniðin jólaböll með jólasveinum, lifandi tónlist og heildarumsjón. Traust þjónusta frá Jólasveinaþjónustu Skyrgáms síðan 1998.">\n  <meta property="og:image" content="https://jolaball.is/hero-jolaball.jpg">
   <meta name="theme-color" content="#123f35">
-  <meta property="og:title" content="Jólaball.is — við sjáum um jólaballið">
-  <meta property="og:description" content="Heildarlausnir fyrir jólaböll fyrirtækja og félaga — frá Jólasveinaþjónustu Skyrgáms.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://jolaball.is/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --green: #123f35;
-      --green-light: #1d5d4f;
-      --cream: #fff9ee;
-      --red: #bd3331;
-      --gold: #e9bd61;
-      --ink: #17312b;
-      --muted: #5f706b;
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 10% 10%, rgba(233,189,97,.18), transparent 28rem),
-        radial-gradient(circle at 90% 85%, rgba(189,51,49,.10), transparent 28rem),
-        var(--cream);
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    a { color: inherit; }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    header, main, footer {
-      width: min(1120px, calc(100% - 40px));
-      margin-inline: auto;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 28px 0;
-    }
-
-    .brand {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 700;
-      font-size: clamp(1.45rem, 4vw, 2rem);
-      letter-spacing: -.03em;
-      text-decoration: none;
-    }
-
-    .brand span { color: var(--red); }
-
-    .byline {
-      color: var(--muted);
-      font-size: .9rem;
-      text-align: right;
-    }
-
-    main {
-      flex: 1;
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      align-items: center;
-      gap: clamp(40px, 7vw, 90px);
-      padding: 52px 0 88px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 18px;
-      color: var(--red);
-      font-weight: 800;
-      letter-spacing: .09em;
-      text-transform: uppercase;
-      font-size: .78rem;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 30px;
-      height: 2px;
-      background: var(--gold);
-    }
-
-    h1 {
-      max-width: 760px;
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3rem, 7vw, 6.4rem);
-      line-height: .98;
-      letter-spacing: -.055em;
-      color: var(--green);
-    }
-
-    .intro {
-      max-width: 670px;
-      margin: 28px 0 0;
-      font-size: clamp(1.05rem, 2vw, 1.3rem);
-      line-height: 1.65;
-      color: var(--muted);
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 34px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 0 24px;
-      border-radius: 999px;
-      background: var(--red);
-      color: #fff;
-      font-weight: 800;
-      text-decoration: none;
-      box-shadow: 0 10px 24px rgba(189,51,49,.18);
-      transition: transform .2s ease, background .2s ease;
-    }
-
-    .button:hover { transform: translateY(-2px); background: #a92927; }
-
-    .text-link {
-      display: inline-flex;
-      align-items: center;
-      padding: 0 8px;
-      color: var(--green);
-      font-weight: 750;
-      text-underline-offset: 4px;
-    }
-
-    .card {
-      position: relative;
-      overflow: hidden;
-      padding: clamp(30px, 5vw, 52px);
-      border-radius: 30px;
-      color: white;
-      background: linear-gradient(145deg, var(--green-light), var(--green));
-      box-shadow: 0 28px 70px rgba(18,63,53,.22);
-    }
-
-    .card::after {
-      content: "✦";
-      position: absolute;
-      right: -18px;
-      top: -46px;
-      color: rgba(233,189,97,.20);
-      font-size: 11rem;
-      line-height: 1;
-    }
-
-    .card h2 {
-      position: relative;
-      z-index: 1;
-      margin: 0 0 24px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.8rem, 3vw, 2.7rem);
-      line-height: 1.08;
-    }
-
-    .services {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      gap: 0;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .services li {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,.14);
-      font-weight: 650;
-    }
-
-    .services li:last-child { border-bottom: 0; }
-    .services li::before { content: "✦"; color: var(--gold); }
-
-    .note {
-      position: relative;
-      z-index: 1;
-      margin: 24px 0 0;
-      color: rgba(255,255,255,.72);
-      line-height: 1.55;
-      font-size: .95rem;
-    }
-
-    footer {
-      display: flex;
-      justify-content: space-between;
-      gap: 22px;
-      padding: 24px 0 34px;
-      border-top: 1px solid rgba(18,63,53,.12);
-      color: var(--muted);
-      font-size: .88rem;
-    }
-
-    footer a { text-underline-offset: 3px; }
-
-    @media (max-width: 800px) {
-      header { align-items: flex-start; }
-      main { grid-template-columns: 1fr; padding-top: 34px; }
-      .card { max-width: 620px; }
-      footer { flex-direction: column; }
-    }
-
-    @media (max-width: 520px) {
-      header, main, footer { width: min(100% - 28px, 1120px); }
-      .byline { max-width: 145px; }
-      h1 { font-size: clamp(2.9rem, 17vw, 4.3rem); }
-      .actions { align-items: flex-start; flex-direction: column; }
-      .button { width: 100%; }
-    }
+    :root{--forest:#123f35;--forest-2:#1b594a;--red:#b92f2d;--cream:#fbf4e7;--paper:#fffdf8;--gold:#d7a84e;--ink:#17332c;--muted:#65746f;--line:rgba(18,63,53,.14);--shadow:0 24px 70px rgba(18,63,53,.13)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;line-height:1.65}
+    img{display:block;max-width:100%}
+    a{color:inherit}
+    .wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+    .eyebrow{margin:0 0 18px;color:var(--gold);font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+    h1,h2,h3{font-family:"Libre Caslon Display",Georgia,serif;font-weight:400;line-height:1.06;letter-spacing:-.035em}
+    h1{margin:0;font-size:clamp(3.5rem,7.3vw,7.2rem)}
+    h2{margin:0;font-size:clamp(2.35rem,4.6vw,4.8rem)}
+    h3{margin:0;font-size:clamp(1.6rem,2.5vw,2.25rem)}
+    p{margin:0 0 1rem}
+    .site-header{position:absolute;z-index:5;top:0;width:100%;color:white}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:26px 0;border-bottom:1px solid rgba(255,255,255,.2)}
+    .brand{display:flex;flex-direction:column;text-decoration:none;line-height:1}
+    .brand-name{font-family:"Libre Caslon Display",Georgia,serif;font-size:1.75rem}
+    .brand-name span{color:#f0bd62}
+    .brand-tagline{margin-top:7px;color:rgba(255,255,255,.72);font-size:.62rem;font-weight:700;letter-spacing:.075em;text-transform:uppercase}
+    nav{display:flex;gap:26px;font-size:.9rem;font-weight:600}
+    nav a{text-decoration:none}
+    nav a:hover{text-decoration:underline;text-underline-offset:5px}
+    .nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 23px;border:0;border-radius:999px;background:var(--red);color:#fff;font:inherit;font-weight:700;text-decoration:none;cursor:pointer;transition:.2s ease}
+    .nav-cta:hover,.button:hover{transform:translateY(-2px);background:#a52625}
+    .hero{position:relative;overflow:hidden;min-height:770px;padding:185px 0 110px;background:linear-gradient(90deg,rgba(7,32,27,.97) 0%,rgba(12,44,37,.88) 42%,rgba(12,44,37,.32) 72%,rgba(7,20,18,.12) 100%),url("/hero-jolaball.jpg") center/cover;color:#fff}
+    .hero:after{content:"";position:absolute;right:-100px;bottom:-180px;width:520px;height:520px;border:1px solid rgba(233,189,97,.22);border-radius:50%;box-shadow:0 0 0 70px rgba(233,189,97,.04),0 0 0 140px rgba(233,189,97,.025)}
+    .hero-copy{position:relative;z-index:1;max-width:880px}
+    .hero h1 em{display:block;color:#f0bd62;font-style:italic}
+    .lead{max-width:740px;margin:30px 0 0;font-size:clamp(1.08rem,2vw,1.35rem);color:rgba(255,255,255,.82)}
+    .actions{display:flex;flex-wrap:wrap;align-items:center;gap:20px;margin-top:36px}
+    .ghost{font-weight:700;text-underline-offset:5px}
+    .trustline{display:flex;flex-wrap:wrap;gap:28px;margin-top:65px;padding-top:26px;border-top:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);font-size:.92rem}
+    .trustline strong{color:white}
+    section{padding:110px 0}
+    .intro-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(50px,9vw,130px);align-items:start}
+    .intro-grid .copy{font-size:1.16rem;color:var(--muted)}
+    .intro-grid .copy strong{color:var(--ink)}
+    .services-section{background:var(--cream)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:50px;margin-bottom:52px}
+    .section-head>p{max-width:460px;color:var(--muted)}
+    .dark-eye{color:var(--red)}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .service{display:flex;min-height:520px;flex-direction:column;padding:35px;border:1px solid var(--line);border-radius:26px;background:var(--paper);box-shadow:0 10px 30px rgba(18,63,53,.04)}
+    .service.featured{background:var(--forest);color:white;transform:translateY(-12px);box-shadow:var(--shadow)}
+    .number{display:flex;align-items:center;justify-content:space-between;margin-bottom:55px;color:var(--red);font-weight:700;font-size:.82rem;letter-spacing:.08em}
+    .featured .number{color:#f0bd62}
+    .service p{margin:22px 0;color:var(--muted)}
+    .featured p{color:rgba(255,255,255,.72)}
+    .service ul{margin:auto 0 0;padding:22px 0 0;list-style:none;border-top:1px solid var(--line)}
+    .featured ul{border-color:rgba(255,255,255,.16)}
+    .service li{position:relative;margin:10px 0;padding-left:21px;font-size:.92rem}
+    .service li:before{content:"✦";position:absolute;left:0;color:var(--gold)}
+    .experience{overflow:hidden;background:var(--forest);color:white}
+    .experience-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
+    .experience .copy p:not(.eyebrow){color:rgba(255,255,255,.72);font-size:1.08rem}
+    .stat{position:relative;min-height:430px;display:grid;place-content:center;border:1px solid rgba(255,255,255,.18);border-radius:50%;text-align:center}
+    .stat:before,.stat:after{content:"";position:absolute;border:1px solid rgba(215,168,78,.18);border-radius:50%;inset:32px}
+    .stat:after{inset:64px}
+    .stat strong{font-family:"Libre Caslon Display",Georgia,serif;font-size:clamp(5rem,10vw,8rem);line-height:.8;color:#f0bd62;font-weight:400}
+    .stat span{z-index:1;margin-top:20px;font-weight:600}
+    .extras{background:var(--paper)}
+    .extras-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:48px}
+    .extra{min-height:175px;padding:24px 18px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#fff,var(--cream));text-align:center}
+    .extra b{display:block;margin-top:14px}
+    .icon{font-size:2rem;color:var(--red)}
+    .extras-note{max-width:760px;margin:36px auto 0;text-align:center;color:var(--muted)}
+    .process{background:var(--cream)}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:52px;border-top:1px solid var(--line)}
+    .step{padding:30px 30px 0 0}
+    .step span{display:grid;place-content:center;width:42px;height:42px;margin-top:-21px;border-radius:50%;background:var(--red);color:white;font-weight:700}
+    .step h3{margin:24px 0 13px;font-size:1.55rem}
+    .step p{color:var(--muted);font-size:.93rem}
+    .audience{padding-bottom:70px;text-align:center}
+    .audience p{max-width:760px;margin:22px auto 0;color:var(--muted);font-size:1.08rem}
+    .audience-list{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:30px}
+    .audience-list span{padding:10px 17px;border:1px solid var(--line);border-radius:999px;background:var(--paper);font-size:.9rem}
+    .inquiry{padding-top:70px;background:linear-gradient(var(--paper) 0 160px,var(--forest) 160px);color:white}
+    .inquiry-shell{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;padding:60px;border-radius:30px;background:#174b40;box-shadow:var(--shadow)}
+    .inquiry-copy p:not(.eyebrow){color:rgba(255,255,255,.72)}
+    .inquiry-copy .small{margin-top:30px;font-size:.88rem}
+    form{padding:38px;border-radius:22px;background:var(--paper);color:var(--ink)}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    label,fieldset{font-size:.86rem;font-weight:700}
+    input,select,textarea{width:100%;margin-top:7px;padding:13px 14px;border:1px solid rgba(18,63,53,.22);border-radius:10px;background:white;color:var(--ink);font:inherit}
+    textarea{min-height:120px;resize:vertical}
+    .full{grid-column:1/-1}
+    fieldset{margin:20px 0 0;padding:0;border:0}
+    .checks{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
+    .checks label{display:flex;align-items:start;gap:8px;font-weight:500}
+    .checks input{width:auto;margin:4px 0 0}
+    form .button{margin-top:24px}
+    .preview-note{margin:14px 0 0;color:var(--muted);font-size:.78rem;font-weight:400}
+    .preview-note.success{color:#176a4b;font-weight:700}
+    .preview-note.error{color:#9f2927;font-weight:700}
+    .button:disabled{cursor:wait;opacity:.72;transform:none}
+    .hp-field{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+    footer{padding:35px 0;background:#0d3029;color:rgba(255,255,255,.65);font-size:.87rem}
+    .foot{display:flex;justify-content:space-between;gap:30px}
+    footer a{color:white;text-underline-offset:4px}
+    @media(max-width:930px){nav{display:none}.service-grid{grid-template-columns:1fr}.service{min-height:0}.service.featured{transform:none}.experience-grid,.intro-grid,.inquiry-shell{grid-template-columns:1fr}.extras-grid{grid-template-columns:repeat(3,1fr)}.steps{grid-template-columns:1fr 1fr;row-gap:45px}.stat{max-width:480px;width:100%;margin:auto}.inquiry{background:var(--forest)}.inquiry-shell{padding:0;background:transparent;box-shadow:none}}
+    @media(max-width:620px){.wrap{width:min(100% - 28px,1160px)}.header-inner{padding:20px 0}.brand-tagline{font-size:.55rem;letter-spacing:.055em}.nav-cta{display:none}.hero{min-height:700px;padding-top:145px}.trustline{gap:12px;flex-direction:column}section{padding:78px 0}.section-head{display:block}.section-head>p{margin-top:20px}.extras-grid{grid-template-columns:1fr 1fr}.extra{min-height:145px}.steps{grid-template-columns:1fr}.form-grid,.checks{grid-template-columns:1fr}.inquiry-shell{gap:35px}form{padding:24px}.foot{flex-direction:column}.stat{min-height:330px}}
   </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <a class="brand" href="/" aria-label="Jólaball.is forsíða">Jólaball<span>.is</span></a>
-      <div class="byline">Heildarlausnir frá Skyrgámi</div>
-    </header>
+  <header class="site-header"><div class="wrap header-inner"><a class="brand" href="#top" aria-label="Jólaball.is — efst á síðu"><span class="brand-name">Jólaball<span>.is</span></span><span class="brand-tagline">Þjónusta frá Skyrgámi · síðan 1998</span></a><nav aria-label="Aðalvalmynd"><a href="#thjonusta">Þjónustan</a><a href="#vidbaetur">Viðbætur</a><a href="#reynsla">Reynslan</a><a href="#ferlid">Ferlið</a></nav><a class="nav-cta" href="#fyrirspurn">Fá tillögu ↘</a></div></header>
+  <main id="top">
+    <section class="hero"><div class="wrap hero-copy"><p class="eyebrow">HEILDARLAUSNIR FRÁ SKYRGÁMI</p><h1>Við sjáum um <em>jólaballið.</em></h1><p class="lead">Jólasveinar, lifandi tónlist, dagskrá og allt sem þarf til að skapa vel heppnað jólaball. Sérsniðin þjónusta fyrir litla og stóra hópa — byggð á reynslu frá 1998.</p><div class="actions"><a class="button" href="#fyrirspurn">Fá tillögu og tilboð ↘</a><a class="ghost" href="#thjonusta">Skoða þjónustuna</a></div><div class="trustline"><span><strong>Síðan 1998</strong> — nær þrír áratugir</span><span><strong>Sérsniðin dagskrá</strong> — engir staðlaðir pakkar</span><span><strong>Einn traustur aðili</strong> — frá hugmynd að framkvæmd</span></div></div></section>
 
-    <main>
-      <section>
-        <div class="eyebrow">Ný síða í vinnslu</div>
-        <h1>Við sjáum um jólaballið.</h1>
-        <p class="intro">
-          Jólaball fyrir fyrirtæki og félög — með jólasveinum, tónlist,
-          dansi, dagskrá og öllu sem skapar alvöru jólastemningu.
-          Ný og glæsileg síða er væntanleg.
-        </p>
-        <div class="actions">
-          <a class="button" href="https://skyrgamur.is/fyrirtaeki/">Senda fyrirspurn</a>
-          <a class="text-link" href="https://skyrgamur.is/">Kynntu þér Skyrgám →</a>
-        </div>
-      </section>
+    <section><div class="wrap intro-grid"><div><p class="eyebrow dark-eye">MEIRA EN TVEIR JÓLASVEINAR</p><h2>Öll skemmtunin. Ein heild.</h2></div><div class="copy"><p><strong>Gott jólaball verður ekki til af tilviljun.</strong> Það þarf rétta fólkið, góða dagskrá og einhvern sem heldur utan um heildina.</p><p>Við mætum ekki aðeins með skemmtikrafta. Við mótum upplifunina með ykkur, veljum útfærslu sem hentar hópnum og sjáum til þess að jólasveinar, tónlistarfólk og dagskrá vinni saman.</p><p>Hvort sem um er að ræða leikskóla, kirkju, félag eða stórt fyrirtæki fáið þið tillögu sem tekur mið af fjölda gesta, aldri, staðsetningu og tíma.</p></div></div></section>
 
-      <aside class="card" aria-label="Þjónusta fyrir jólaböll">
-        <h2>Allt sem þarf á gott jólaball</h2>
-        <ul class="services">
-          <li>Jólasveinar og skemmtun</li>
-          <li>Tónlistarstjóri, söngur og dans</li>
-          <li>Hljóðkerfi og dagskrárstjórn</li>
-          <li>Sælgætispokar og viðbætur</li>
-          <li>Skipulag frá A til Ö</li>
-        </ul>
-        <p class="note">Jólasveinaþjónusta Skyrgáms hefur skapað jólastemningu fyrir íslensk fyrirtæki og fjölskyldur síðan 1998.</p>
-      </aside>
-    </main>
+    <section class="services-section" id="thjonusta"><div class="wrap"><div class="section-head"><div><p class="eyebrow dark-eye">ÞRJÁR LEIÐIR</p><h2>Hvað getum við tekið að okkur?</h2></div><p>Veljið þann grunn sem kemst næst ykkar þörfum. Við útfærum síðan dagskrána og þjónustuna með ykkur.</p></div><div class="service-grid">
+      <article class="service"><div class="number"><span>01</span><span>JÓLASVEINAR</span></div><h3>Jólasveinar og skemmtun</h3><p>Fyrir þau sem eru þegar með sal og aðra dagskrá en vilja færa alvöru jólagleði inn á viðburðinn.</p><ul><li>Reyndir jólasveinar</li><li>Skemmtun löguð að hópnum</li><li>Söngur, grín og góð samskipti</li></ul></article>
+      <article class="service featured"><div class="number"><span>02</span><span>LIFANDI TÓNLIST</span></div><h3>Jólaball með lifandi tónlist</h3><p>Heildstæð skemmtidagskrá þar sem jólasveinar og tónlistarfólk leiða gesti í söng, dans og leik.</p><ul><li>Tónlistarfólk og dagskrárstjórn</li><li>Jólasveinar sem taka virkan þátt</li><li>Hljóðkerfi eftir þörfum</li></ul></article>
+      <article class="service"><div class="number"><span>03</span><span>FRÁ A TIL Ö</span></div><h3>Við sjáum um allt jólaballið</h3><p>Fyrir þau sem vilja einn traustan samstarfsaðila til að móta viðburðinn og sjá um framkvæmdina.</p><ul><li>Salur, skemmtun og tæknimál</li><li>Sælgæti og veitingar</li><li>Skipulag og utanumhald</li></ul></article>
+    </div></div></section>
 
-    <footer>
-      <span>© 2026 Jólaball.is · Jólasveinaþjónusta Skyrgáms</span>
-      <a href="https://skyrgamur.is/">skyrgamur.is</a>
-    </footer>
-  </div>
+    <section class="experience" id="reynsla"><div class="wrap experience-grid"><div class="stat"><strong>1998</strong><span>Jólagleði og fagmennska síðan</span></div><div class="copy"><p class="eyebrow">REYNSLA SEM SKIPTIR MÁLI</p><h2>Þið eigið að geta notið jólaballsins.</h2><p>Jólasveinaþjónusta Skyrgáms hefur skapað jólastemningu fyrir íslensk fyrirtæki, skóla, kirkjur, félög og fjölskyldur síðan 1998.</p><p>Reynslan kennir okkur að lesa ólíka hópa, bregðast við því sem gerist og halda utan um smáatriðin. Fagmennska, vandaðir búningar, gott tónlistarfólk og skýr samskipti eru grunnurinn að þjónustunni.</p><p><strong>Markmiðið er einfalt:</strong> Þið eigið að geta verið gestir á eigin jólaballi.</p></div></div></section>
+
+    <section class="extras" id="vidbaetur"><div class="wrap"><div class="section-head"><div><p class="eyebrow dark-eye">GERIÐ MEIRA ÚR DEGINUM</p><h2>Fleiri hugmyndir. Meiri jólagleði.</h2></div><p>Jólaballið þarf ekki að fylgja einni uppskrift. Við getum bætt við þáttum sem henta stemningunni og hópnum.</p></div><div class="extras-grid">
+      <div class="extra"><span class="icon">♫</span><b>Lifandi tónlist</b></div><div class="extra"><span class="icon">✦</span><b>Jólabingó</b></div><div class="extra"><span class="icon">●</span><b>Poppvél</b></div><div class="extra"><span class="icon">◇</span><b>Sælgætispokar</b></div><div class="extra"><span class="icon">⌂</span><b>Salur</b></div><div class="extra"><span class="icon">✧</span><b>Sérsniðin dagskrá</b></div>
+    </div><p class="extras-note">Einnig er hægt að skoða hljóðkerfi, veitingar, candyfloss og fleiri skemmtilegar útfærslur. Segið okkur frá hópnum — við hjálpum ykkur að velja það sem virkar.</p></div></section>
+
+    <section class="process" id="ferlid"><div class="wrap"><div class="section-head"><div><p class="eyebrow dark-eye">EINFALT FERLI</p><h2>Frá hugmynd að jólaballi</h2></div><p>Hvert jólaball er sérsniðið. Þess vegna byrjum við á samtali, ekki verðlista.</p></div><div class="steps"><div class="step"><span>1</span><h3>Segið okkur frá</h3><p>Dagsetning, staðsetning, fjöldi gesta og það sem þið hafið í huga.</p></div><div class="step"><span>2</span><h3>Við mótum tillögu</h3><p>Við veljum saman þjónustu og dagskrá sem hentar hópnum.</p></div><div class="step"><span>3</span><h3>Þið fáið tilboð</h3><p>Verðið miðast við umfang, tíma, staðsetningu og útfærslu.</p></div><div class="step"><span>4</span><h3>Við sjáum um ballið</h3><p>Fólkið okkar mætir undirbúið og heldur utan um skemmtunina.</p></div></div></div></section>
+
+    <section class="audience"><div class="wrap"><p class="eyebrow dark-eye">LITLIR OG STÓRIR HÓPAR</p><h2>Jólaball sem hentar ykkur</h2><p>Sama hvort gestirnir eru nokkrir tugir eða nokkur hundruð. Við miðum tillöguna við hópinn og aðstæður.</p><div class="audience-list"><span>Leikskólar</span><span>Grunnskólar</span><span>Kirkjur</span><span>Félagasamtök</span><span>Starfsmannafélög</span><span>Fyrirtæki</span></div></div></section>
+
+    <section class="inquiry" id="fyrirspurn"><div class="wrap inquiry-shell"><div class="inquiry-copy"><p class="eyebrow">FÁ TILLÖGU OG TILBOÐ</p><h2>Segið okkur frá jólaballinu.</h2><p>Gefið okkur fyrstu upplýsingarnar. Við förum yfir þarfirnar, mótum tillögu og höfum samband.</p><p class="small"><strong>Fyrirspurn er ekki bókun.</strong><br>Endanleg útfærsla og verð eru staðfest sérstaklega.</p></div><form id="preview-form" method="post" aria-describedby="form-note"><input type="hidden" name="origin"><input type="hidden" name="requestId"><input type="hidden" name="service"><label class="hp-field" aria-hidden="true">Skildu þennan reit eftir auðan<input name="website" tabindex="-1" autocomplete="off"></label><div class="form-grid"><label>Nafn tengiliðar *<input name="name" autocomplete="name" maxlength="120" required></label><label>Fyrirtæki, félag eða stofnun<input name="group" autocomplete="organization" maxlength="200"></label><label>Netfang *<input name="email" type="email" autocomplete="email" maxlength="254" required></label><label>Símanúmer<input name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="40"></label><label>Dagsetning<input name="date" type="date"></label><label>Tímasetning<input name="time" type="time"></label><label>Staðsetning<input name="location" autocomplete="street-address" maxlength="200"></label><label>Áætlaður gestafjöldi<input name="guests" type="number" min="1" max="1000" inputmode="numeric"></label><fieldset class="full"><legend>Hvernig getum við hjálpað? *</legend><div class="checks"><label><input name="services" value="Jólasveinar og skemmtun" type="checkbox"> Jólasveinar og skemmtun</label><label><input name="services" value="Lifandi tónlist og hljóðkerfi" type="checkbox"> Lifandi tónlist og hljóðkerfi</label><label><input name="services" value="Heildarlausn frá A til Ö" type="checkbox"> Heildarlausn frá A til Ö</label><label><input name="services" value="Salur og/eða veitingar" type="checkbox"> Salur og/eða veitingar</label><label><input name="services" value="Sælgæti" type="checkbox"> Sælgæti</label><label><input name="services" value="Óska eftir tillögu" type="checkbox"> Óska eftir tillögu</label></div></fieldset><label class="full">Segið okkur aðeins frá jólaballinu *<textarea name="message" maxlength="3000" required placeholder="Hvernig hópur er þetta og hvað hafið þið í huga?"></textarea></label></div><button class="button" type="submit">Óska eftir tillögu og tilboði ↗</button><p class="preview-note" id="form-note" aria-live="polite">Fyrirspurnin verður send til Skyrgáms. Þú færð móttökustaðfestingu í tölvupósti.</p></form></div></section>
+  </main>
+  <footer><div class="wrap foot"><span>© 2026 Jólaball.is · Þjónusta frá Jólasveinaþjónustu Skyrgáms</span><span><a href="https://skyrgamur.is/">skyrgamur.is ↗</a> · skyrgamur@skyrgamur.is</span></div></footer>
+  <script>
+    (() => {
+      const endpoint = 'https://script.google.com/macros/s/AKfycbzseeFH1Ui-HgK_vYvMV92M15005fvlBLJRfsWKAqT2QNBYjEAaxvXsW0kmQSnb_nvR-Q/exec';
+      const form = document.getElementById('preview-form');
+      const status = document.getElementById('form-note');
+      const button = form.querySelector('button[type="submit"]');
+      const frame = document.createElement('iframe');
+      frame.name = 'jolaball-inquiry-response';
+      frame.title = 'Svar við fyrirspurn';
+      frame.hidden = true;
+      document.body.append(frame);
+      form.action = endpoint;
+      form.target = frame.name;
+      form.elements.origin.value = window.location.origin;
+      let activeId;
+      let timeout;
+      const setBusy = busy => {
+        button.disabled = busy;
+        button.textContent = busy ? 'Sendum fyrirspurn…' : 'Óska eftir tillögu og tilboði ↗';
+      };
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        status.className = 'preview-note';
+        const selected = [...form.querySelectorAll('[name="services"]:checked')].map(input => input.value);
+        if (!selected.length) {
+          status.textContent = 'Veldu að minnsta kosti einn þjónustuþátt.';
+          status.classList.add('error');
+          form.querySelector('[name="services"]').focus();
+          return;
+        }
+        if (!form.reportValidity() || form.elements.website.value) return;
+        activeId = crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + '-' + Math.random().toString(36).slice(2);
+        form.elements.requestId.value = activeId;
+        form.elements.service.value = 'Jólaball.is: ' + selected.join(' | ');
+        status.textContent = 'Sendum fyrirspurnina…';
+        setBusy(true);
+        HTMLFormElement.prototype.submit.call(form);
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          setBusy(false);
+          status.textContent = 'Ekki tókst að staðfesta móttöku. Athugaðu hvort staðfestingarpóstur hafi borist áður en þú reynir aftur.';
+          status.classList.add('error');
+        }, 45000);
+      });
+      window.addEventListener('message', event => {
+        const trustedOrigin = event.origin === 'https://script.google.com' || event.origin === 'https://script.googleusercontent.com' || /^https:\/\/[a-z0-9-]+-script\.googleusercontent\.com$/.test(event.origin);
+        if (!activeId || !trustedOrigin || event.data?.type !== 'skyrgamur-inquiry' || event.data.requestId !== activeId) return;
+        activeId = undefined;
+        clearTimeout(timeout);
+        setBusy(false);
+        status.className = 'preview-note';
+        if (event.data.status === 'sent') {
+          status.textContent = 'Við höfum móttekið fyrirspurnina og sent þér staðfestingu í tölvupósti. Við höfum samband eins fljótt og auðið er.';
+          status.classList.add('success');
+          form.reset();
+          form.elements.origin.value = window.location.origin;
+        } else if (event.data.status === 'receipt-error') {
+          status.textContent = 'Fyrirspurnin barst okkur en ekki tókst að senda móttökupóst. Hafðu samband við skyrgamur@skyrgamur.is ef staðfesting berst ekki.';
+          status.classList.add('error');
+        } else {
+          status.textContent = 'Ekki tókst að senda fyrirspurnina. Reyndu aftur síðar eða skrifaðu á skyrgamur@skyrgamur.is.';
+          status.classList.add('error');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
