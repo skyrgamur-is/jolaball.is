@@ -17,35 +17,29 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Install SFTP client
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
+      - name: Register SFTP host key
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_PORT: ${{ secrets.FTP_PORT }}
+        run: |
+          install -d -m 700 ~/.ssh
+          ssh-keyscan -p "$FTP_PORT" -H "$FTP_SERVER" >> ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
       - name: Upload site over SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}
-          local_path: ./index.html
-          remote_path: /
-          sftp_only: true
-
-      - name: Upload preview page over SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}
-          local_path: ./preview.html
-          remote_path: /
-          sftp_only: true
-
-      - name: Upload preview hero image over SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}
-          local_path: ./hero-jolaball.jpg
-          remote_path: /
-          sftp_only: true
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_PORT: ${{ secrets.FTP_PORT }}
+        run: |
+          sshpass -p "$FTP_PASSWORD" sftp \
+            -P "$FTP_PORT" \
+            "$FTP_USERNAME@$FTP_SERVER" <<'SFTP'
+          put index.html /index.html
+          put preview.html /preview.html
+          put hero-jolaball.jpg /hero-jolaball.jpg
+          SFTP
