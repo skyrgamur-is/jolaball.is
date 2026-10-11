@@ -42,4 +42,7 @@ jobs:
           put index.html /index.html
           put preview.html /preview.html
           put hero-jolaball.jpg /hero-jolaball.jpg
+          put skipuleggja-jolaball.html /skipuleggja-jolaball.html
+          put robots.txt /robots.txt
+          put sitemap.xml /sitemap.xml
           SFTP
