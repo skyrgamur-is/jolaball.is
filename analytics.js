@@ -76,7 +76,7 @@
       });
       location.reload();
     }
-    settings.focus();
+    settings.focus({ preventScroll: true });
   });
   const settings = document.createElement('button');
   settings.type = 'button';
@@ -84,7 +84,7 @@
   settings.textContent = 'Stillingar vefmælinga';
   settings.addEventListener('click', () => {
     panel.hidden = false;
-    panel.querySelector('button').focus();
+    panel.querySelector('button').focus({ preventScroll: true });
   });
   document.body.append(panel);
   (document.querySelector('footer') || document.body).append(settings);
