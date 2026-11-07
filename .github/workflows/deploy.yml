@@ -39,6 +39,7 @@ jobs:
           sshpass -p "$FTP_PASSWORD" sftp \
             -P "$FTP_PORT" \
             "$FTP_USERNAME@$FTP_SERVER" <<'SFTP'
+          put analytics.js /analytics.js
           put index.html /index.html
           put preview.html /preview.html
           put hero-jolaball.jpg /hero-jolaball.jpg
